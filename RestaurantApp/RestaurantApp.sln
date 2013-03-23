@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantApp", "RestaurantApp\RestaurantApp.csproj", "{199EF518-301C-424B-8F3D-FFBD57748B84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantApp.Tests", "RestaurantApp.Tests\RestaurantApp.Tests.csproj", "{27A0D96F-5DF2-4F0F-9B06-452E37112204}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{199EF518-301C-424B-8F3D-FFBD57748B84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{199EF518-301C-424B-8F3D-FFBD57748B84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{199EF518-301C-424B-8F3D-FFBD57748B84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{199EF518-301C-424B-8F3D-FFBD57748B84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27A0D96F-5DF2-4F0F-9B06-452E37112204}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27A0D96F-5DF2-4F0F-9B06-452E37112204}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27A0D96F-5DF2-4F0F-9B06-452E37112204}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27A0D96F-5DF2-4F0F-9B06-452E37112204}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
