@@ -17,8 +17,9 @@ namespace RestaurantApp.Controllers
             //ToDo: do usuniecia, testowe
             try
             {
-                var test = db.Test.Find(1);
-                ViewBag.Message = "From database: " + test.name;
+                var foods = db.Foods.Find(1);
+                //ViewBag.Message = "From database: " + foods.name;
+                ViewBag.Message = "Data base connect";
             }
             catch
             {

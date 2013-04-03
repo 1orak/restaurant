@@ -1,0 +1,36 @@
+﻿@model RestaurantApp.Models.Reservations
+
+@{
+    ViewBag.Title = "Details of reservation";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Reservations</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.table_number)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.table_number)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.date)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.time)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.time)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

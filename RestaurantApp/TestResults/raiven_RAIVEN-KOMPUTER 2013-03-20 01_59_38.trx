@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="3fe48fe4-6ffd-494d-97ca-f3cc85b83f51" name="raiven@RAIVEN-KOMPUTER 2013-03-20 01:59:38" runUser="raiven-Komputer\raiven" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="ca3108be-a473-4034-81f5-832839969422">
+    <Deployment runDeploymentRoot="raiven_RAIVEN-KOMPUTER 2013-03-20 01_59_38">
+      <DeploymentItem filename="C:\Users\raiven\Documents\Visual Studio 2010\Projects\RestaurantApp\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll" />
+      <DeploymentItem filename="C:\Users\raiven\Documents\Visual Studio 2010\Projects\RestaurantApp\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll" />
+      <DeploymentItem filename="C:\Users\raiven\Documents\Visual Studio 2010\Projects\RestaurantApp\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll" />
+      <DeploymentItem filename="C:\Users\raiven\Documents\Visual Studio 2010\Projects\RestaurantApp\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll" />
+      <DeploymentItem filename="C:\Users\raiven\Documents\Visual Studio 2010\Projects\RestaurantApp\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll" />
+      <DeploymentItem filename="C:\Users\raiven\Documents\Visual Studio 2010\Projects\RestaurantApp\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll" />
+      <DeploymentItem filename="C:\Users\raiven\Documents\Visual Studio 2010\Projects\RestaurantApp\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll" />
+      <DeploymentItem filename="C:\Users\raiven\Documents\Visual Studio 2010\Projects\RestaurantApp\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll" />
+      <DeploymentItem filename="C:\Users\raiven\Documents\Visual Studio 2010\Projects\RestaurantApp\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll" />
+      <DeploymentItem filename="C:\Users\raiven\Documents\Visual Studio 2010\Projects\RestaurantApp\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll" />
+      <DeploymentItem filename="C:\Users\raiven\Documents\Visual Studio 2010\Projects\RestaurantApp\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll" />
+      <DeploymentItem filename="C:\Users\raiven\Documents\Visual Studio 2010\Projects\RestaurantApp\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll" />
+      <DeploymentItem filename="C:\Users\raiven\Documents\Visual Studio 2010\Projects\RestaurantApp\RestaurantApp\bin\RestaurantApp.dll" />
+      <DeploymentItem filename="C:\Users\raiven\Documents\Visual Studio 2010\Projects\RestaurantApp\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2013-03-20T01:59:38.4039320+01:00" queuing="2013-03-20T01:59:40.0010233+01:00" start="2013-03-20T01:59:40.0720274+01:00" finish="2013-03-20T01:59:45.0543123+01:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="3" executed="3" passed="2" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="RAIVEN-KOMPUTER" outcome="Warning" timestamp="2013-03-20T01:59:39.1169728+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'log4net' directly or indirectly referenced by the test container 'c:\users\raiven\documents\visual studio 2010\projects\restaurantapp\restaurantapp.tests\bin\debug\restaurantapp.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="RAIVEN-KOMPUTER" outcome="Warning" timestamp="2013-03-20T01:59:39.1169728+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'Org.Mentalis.Security.Cryptography' directly or indirectly referenced by the test container 'c:\users\raiven\documents\visual studio 2010\projects\restaurantapp\restaurantapp.tests\bin\debug\restaurantapp.tests.dll' was not found.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="About" storage="c:\users\raiven\documents\visual studio 2010\projects\restaurantapp\restaurantapp.tests\bin\debug\restaurantapp.tests.dll" id="aeefc6c1-18f9-888d-4b20-0560a530611d">
+      <Execution id="b3456069-0b8a-46f0-92eb-cf3b704c27db" />
+      <TestMethod codeBase="C:/Users/raiven/Documents/Visual Studio 2010/Projects/RestaurantApp/RestaurantApp.Tests/bin/Debug/RestaurantApp.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="RestaurantApp.Tests.Controllers.HomeControllerTest, RestaurantApp.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="About" />
+    </UnitTest>
+    <UnitTest name="Index" storage="c:\users\raiven\documents\visual studio 2010\projects\restaurantapp\restaurantapp.tests\bin\debug\restaurantapp.tests.dll" id="10075794-a238-e481-a602-2321bdb59b73">
+      <Execution id="da1b6253-0ad2-40de-b999-cbeb343f036d" />
+      <TestMethod codeBase="C:/Users/raiven/Documents/Visual Studio 2010/Projects/RestaurantApp/RestaurantApp.Tests/bin/Debug/RestaurantApp.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="RestaurantApp.Tests.Controllers.HomeControllerTest, RestaurantApp.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Index" />
+    </UnitTest>
+    <UnitTest name="Contact" storage="c:\users\raiven\documents\visual studio 2010\projects\restaurantapp\restaurantapp.tests\bin\debug\restaurantapp.tests.dll" id="6c4ab82a-d92c-9744-8d7c-9122b438743d">
+      <Execution id="faf0ee49-943b-439d-b65a-c85c32b2c2b7" />
+      <TestMethod codeBase="C:/Users/raiven/Documents/Visual Studio 2010/Projects/RestaurantApp/RestaurantApp.Tests/bin/Debug/RestaurantApp.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="RestaurantApp.Tests.Controllers.HomeControllerTest, RestaurantApp.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Contact" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="10075794-a238-e481-a602-2321bdb59b73" executionId="da1b6253-0ad2-40de-b999-cbeb343f036d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="aeefc6c1-18f9-888d-4b20-0560a530611d" executionId="b3456069-0b8a-46f0-92eb-cf3b704c27db" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6c4ab82a-d92c-9744-8d7c-9122b438743d" executionId="faf0ee49-943b-439d-b65a-c85c32b2c2b7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="da1b6253-0ad2-40de-b999-cbeb343f036d" testId="10075794-a238-e481-a602-2321bdb59b73" testName="Index" computerName="RAIVEN-KOMPUTER" duration="00:00:02.0038299" startTime="2013-03-20T01:59:40.1370311+01:00" endTime="2013-03-20T01:59:43.3742163+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="da1b6253-0ad2-40de-b999-cbeb343f036d">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.AreEqual failed. Expected:&lt;Modify this template to jump-start your ASP.NET MVC application.&gt;. Actual:&lt;It was error retrieving data from DB&gt;. </Message>
+          <StackTrace>   at CallSite.Target(Closure , CallSite , Type , String , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2](CallSite site, T0 arg0, T1 arg1, T2 arg2)
+   at RestaurantApp.Tests.Controllers.HomeControllerTest.Index() in C:\Users\raiven\Documents\Visual Studio 2010\Projects\RestaurantApp\RestaurantApp.Tests\Controllers\HomeControllerTest.cs:line 25
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="b3456069-0b8a-46f0-92eb-cf3b704c27db" testId="aeefc6c1-18f9-888d-4b20-0560a530611d" testName="About" computerName="RAIVEN-KOMPUTER" duration="00:00:00.0191348" startTime="2013-03-20T01:59:43.3902172+01:00" endTime="2013-03-20T01:59:43.4152186+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b3456069-0b8a-46f0-92eb-cf3b704c27db">
+    </UnitTestResult>
+    <UnitTestResult executionId="faf0ee49-943b-439d-b65a-c85c32b2c2b7" testId="6c4ab82a-d92c-9744-8d7c-9122b438743d" testName="Contact" computerName="RAIVEN-KOMPUTER" duration="00:00:00.0217782" startTime="2013-03-20T01:59:43.4212189+01:00" endTime="2013-03-20T01:59:43.4492205+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="faf0ee49-943b-439d-b65a-c85c32b2c2b7">
+    </UnitTestResult>
+  </Results>
+</TestRun>

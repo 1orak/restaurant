@@ -1,0 +1,77 @@
+﻿@model IEnumerable<RestaurantApp.Models.Foods>
+
+@{
+    ViewBag.Title = "Search menu";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Create new", "Create")
+    <p>
+    @Html.ActionLink("Back to menu", "Index")
+
+    </p>
+    @using (Html.BeginForm())
+    {   
+         <p>
+         name: @Html.TextBox("SearchString") 
+         category: @Html.DropDownList("foodCategory", "All")  
+            price: @Html.DropDownList("foodPrice", "All")
+            time: @Html.DropDownList("foodTime", "All")
+         <input type="submit" value="Filter" /></p>
+    }
+</p>
+
+
+<table frame=box>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.time_to_prepare)
+        </th>
+           <th>
+            functions
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.category)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.time_to_prepare)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+        </td>
+    </tr>
+}
+
+</table>
+

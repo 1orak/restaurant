@@ -1,0 +1,54 @@
+﻿@model RestaurantApp.Models.Foods
+
+@{
+    ViewBag.Title = "Details of position";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<fieldset>
+    <legend>Foods</legend>
+
+    <div class="display-label" style="color:#0000FF">
+         Name: @Html.DisplayFor(model => model.name)
+    </div>
+    @if (Model.category == 4)
+    {
+    <div class="display-label">
+        
+         Category: Soup
+        
+    </div>
+    }
+    @if (Model.category == 2)
+    {
+    <div class="display-label">
+        
+         Category: Main courses
+        
+    </div>
+    }
+    else
+    {
+    <div class="display-label">
+        
+         Category: @Html.DisplayFor(model => model.category)
+        
+    </div>
+    }
+    <div class="display-label"  style="color:#0000FF">
+         Description: @Html.DisplayFor(model => model.description)
+    </div>
+
+    <div class="display-label">
+         Price: @Html.DisplayFor(model => model.price) Euro
+    </div>
+
+    <div class="display-label" style="color:#0000FF">
+         Time to prepare: @Html.DisplayFor(model => model.time_to_prepare) minutes
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
