@@ -29,10 +29,16 @@
             @Html.DisplayFor(modelItem => item.table_number)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.date)
+            @{ var date = item.getDate();
+               var dateS = date.ToShortDateString();
+               }
+            @Html.DisplayFor(modelItem => dateS)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.time)
+            @{ var time = item.getTime();
+               var timeS = time.ToShortTimeString();
+               }
+            @Html.DisplayFor(modelItem => timeS)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

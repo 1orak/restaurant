@@ -10,10 +10,34 @@ namespace RestaurantApp.Models
         public int Id { get; set; }
 
         public int table_number { get; set; }
-        //konwersja datatime C# na datatime mysql
 
-        //public DateTime date { get; set; }
+        public string date { get; set; }
 
-        //public int time { get; set; }
+        public string time { get; set; }
+
+
+        #region konwersja daty i godziny mysql
+
+        public DateTime getTime()
+        {
+            return Convert.ToDateTime(time);
+        }
+
+        public DateTime getDate()
+        {
+            return Convert.ToDateTime(date);
+        }
+
+        public void setTime(DateTime dt)
+        {
+            time = dt.ToShortTimeString();
+        }
+
+        public void setDate(DateTime dt)
+        {
+            date = dt.ToShortDateString();
+        }
+
+        #endregion
     }
 }
