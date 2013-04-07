@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Strona główna";
 }
 @section featured {
     <section class="featured">
@@ -9,30 +9,9 @@
                 <p>@ViewBag.Message</p>
             </hgroup>
             <p>
-                This is page of as restaurant... dsahfjkgdhfljgkdfsgdhfjkjfdgsfdafsgh
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </p>
         </div>
     </section>
 }
-<h3>Wellcome:</h3>
-<ol class="round">
-    <li class="one">
-        <h5>@Html.ActionLink("Look as offert", "Index", "ViewFoods")</h5>
-        We are ofert ... bla bla bla
-    </li>
-
-    <li class="two">
-        <h5>@Html.ActionLink("Make a reservation", "Index", "Reservations")</h5>
-        You can make your reservation's @Html.ActionLink("here", "Index", "ViewFoods"), and find your ... sajfsgdh
-    </li>
-
-    <li class="three">
-        <h5>@Html.ActionLink("Login", "Login", "Account")</h5>
-        You can login here, or if you d'n have account .....sdfhdjgk
-    </li>
-
-    <li class="four">
-        <h5>Lern more</h5>
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245157">Learn more about as</a>
-    </li>
-</ol>
+@Html.Partial("_ShowTables")

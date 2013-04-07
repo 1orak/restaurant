@@ -1,39 +1,22 @@
-﻿using System;
+﻿using RestaurantApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using RestaurantApp.Models;
 
 namespace RestaurantApp.Controllers
 {
-    public class HomeController : Controller
+    public class TablesController : Controller
     {
-        //ToDo: do usuniecia, testowe
         private RestaurantDBContext db = new RestaurantDBContext();
+        //
+        // GET: /Tables/
 
-        public ActionResult Index()
+        public ActionResult ShowTables()
         {
-            //ToDo: do usuniecia, testowe
-            try
-            {
-                var foods = db.Foods.Find(1);
-                //ViewBag.Message = "From database: " + foods.name;
-                ViewBag.Message = "Database connected";
-            }
-            catch
-            {
-                ViewBag.Message = "It was error retrieving data from DB";
-            }          
-
-            return View(getTablesReservation(DateTime.Now,DateTime.Now.AddHours(-2)));
-        }
-
-        private List<Tables> getTablesReservation(DateTime fromTime, DateTime endTime)
-        {
-
             var query = from r in db.Reservations
-                        where r.date_time < fromTime && r.date_time > endTime
+                        where r.date_time < DateTime.Now
                         join o in db.Orders on r.Id equals o.Reservations_id
                         into temp
                         let te = temp.DefaultIfEmpty()
@@ -53,7 +36,7 @@ namespace RestaurantApp.Controllers
                              x = t.x,
                              y = t.y,
                              size = t.size,
-                             state = (tt.state == null) ? 4 : tt.state
+                             state = (tt.state == null)? 4:tt.state
                          };
             List<Tables> listt = new List<Tables>();
 
@@ -62,21 +45,8 @@ namespace RestaurantApp.Controllers
                 listt.Add(new Tables(item.Id, item.x, item.y, item.size, item.state));
             }
 
-            return listt;
+            return View(listt);
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your app description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
     }
 }

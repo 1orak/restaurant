@@ -754,3 +754,11 @@ tr.pager td {
             margin: 0;
         }
 }
+
+    /* tables
+    --------------------------------------------------------------*/
+    .tables {
+        width: 500px;
+        height: 327px;
+        position: relative;
+    }

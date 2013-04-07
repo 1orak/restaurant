@@ -11,5 +11,7 @@ namespace RestaurantApp.Models
         public DbSet<Test> Test { get; set; }
         public DbSet<Foods> Foods { get; set; }
         public DbSet<Reservations> Reservations { get; set; }
+        public DbSet<Tables> Tables { get; set; }
+        public DbSet<Orders> Orders { get; set; }
     }
 }

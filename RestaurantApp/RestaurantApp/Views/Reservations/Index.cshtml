@@ -15,10 +15,10 @@
             @Html.DisplayNameFor(model => model.table_number)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.date)
+            @Html.DisplayNameFor(model => model.date_time)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.time)
+            @Html.DisplayNameFor(model => model.date_time)
         </th>
         <th></th>
     </tr>
@@ -29,16 +29,10 @@
             @Html.DisplayFor(modelItem => item.table_number)
         </td>
         <td>
-            @{ var date = item.getDate();
-               var dateS = date.ToShortDateString();
-               }
-            @Html.DisplayFor(modelItem => dateS)
+            @Html.DisplayFor(modelItem => item.date_time.Date)
         </td>
         <td>
-            @{ var time = item.getTime();
-               var timeS = time.ToShortTimeString();
-               }
-            @Html.DisplayFor(modelItem => timeS)
+            @Html.DisplayFor(modelItem => item.date_time.TimeOfDay)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

@@ -21,21 +21,12 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.date)
+            @Html.LabelFor(model => model.date_time)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.date)
-            @Html.ValidationMessageFor(model => model.date)
+            @Html.EditorFor(model => model.date_time)
+            @Html.ValidationMessageFor(model => model.date_time)
         </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.time)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.time)
-            @Html.ValidationMessageFor(model => model.time)
-        </div>
-
         <p>
             <input type="submit" value="Create" />
         </p>

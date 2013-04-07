@@ -154,6 +154,6 @@ C:\Users\Andre\Documents\GitHub\restaurant\RestaurantApp\RestaurantApp\bin\DotNe
 C:\Users\Andre\Documents\GitHub\restaurant\RestaurantApp\RestaurantApp\bin\DotNetOpenAuth.OAuth.xml
 C:\Users\Andre\Documents\GitHub\restaurant\RestaurantApp\RestaurantApp\bin\DotNetOpenAuth.OpenId.xml
 C:\Users\Andre\Documents\GitHub\restaurant\RestaurantApp\RestaurantApp\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
-C:\Users\Andre\Documents\GitHub\restaurant\RestaurantApp\RestaurantApp\obj\Debug\RestaurantApp.csprojResolveAssemblyReference.cache
 C:\Users\Andre\Documents\GitHub\restaurant\RestaurantApp\RestaurantApp\obj\Debug\RestaurantApp.dll
 C:\Users\Andre\Documents\GitHub\restaurant\RestaurantApp\RestaurantApp\obj\Debug\RestaurantApp.pdb
+C:\Users\Andre\Documents\GitHub\restaurant\RestaurantApp\RestaurantApp\obj\Debug\RestaurantApp.csprojResolveAssemblyReference.cache

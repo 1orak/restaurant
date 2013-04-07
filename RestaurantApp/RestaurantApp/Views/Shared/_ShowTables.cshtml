@@ -1,0 +1,22 @@
+﻿@model IEnumerable<RestaurantApp.Models.Tables>
+@{
+    ViewBag.Title = "ShowTables";
+}
+
+<h2>Aktualne rezerwacje stolików</h2>
+<p>(@DateTime.Now.ToLongTimeString())</p>
+
+<div class="tables" style="background-image: url(../Images/local.png)">
+    
+    @foreach (var item in Model)
+    {
+        if(item.state != 4)
+        {
+            <img src="../Images/NotFreeTable.png" title="Niedostępny" style="top: @(item.y)px ;left: @(item.x)px; position: absolute;" />
+        }
+        else
+        {
+            <img src="../Images/FreeTable.png" title="Dostępny" style="top: @(item.y)px ;left: @(item.x)px; position: absolute;" />
+        }
+    }
+</div>
