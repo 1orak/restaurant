@@ -32,7 +32,6 @@ namespace RestaurantApp.Controllers
 
         public ActionResult Create()
         {
-            //nie dodaje do bazy???
             return View();
         }
 
