@@ -39,17 +39,21 @@ namespace RestaurantApp.Controllers
         // POST: /Reservations/Create
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Reservations reservation)
         {
             try
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    db.Reservations.Add(reservation);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                return View(reservation);
             }
             catch
             {
-                return View();
+                return View(reservation);
             }
         }
 
@@ -65,17 +69,21 @@ namespace RestaurantApp.Controllers
         // POST: /Reservations/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Reservations reservation)
         {
             try
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    db.Reservations.Add(reservation);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                return View(reservation);
             }
             catch
             {
-                return View();
+                return View(reservation);
             }
         }
 
@@ -91,7 +99,7 @@ namespace RestaurantApp.Controllers
         // POST: /Reservations/Delete/5
 
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, Reservations reservation)
         {
             try
             {

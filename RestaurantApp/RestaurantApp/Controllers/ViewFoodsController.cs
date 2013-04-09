@@ -18,7 +18,7 @@ namespace RestaurantApp.Controllers
 
         public ActionResult Index()
         {
-            return View(db.Foods.ToList());
+            return View(db.Foods.ToList().OrderBy(x => x.category));
         }
 
 
@@ -31,7 +31,7 @@ namespace RestaurantApp.Controllers
             return View(foods);
         }
 
-        public ActionResult SearchIndex(string searchString, int foodCategory = 0, int foodTime = 0, float foodPrice = -1)
+        public ActionResult SearchIndex(string searchString, int foodCategory = 0, int foodTime = 0, decimal foodPrice = -1)
         {
             //**************************************
             // kategoria, czas nie mogą być NULL ani 0, cena nie może być ujemna lub Null
@@ -55,7 +55,7 @@ namespace RestaurantApp.Controllers
             ViewBag.foodTime = new SelectList(TimeLst);
             //**************************************
             //tworzenie listy cen
-            var PriceLst = new List<float>();
+            var PriceLst = new List<decimal>();
 
             var PriceQry = from e in db.Foods
                               orderby e.price

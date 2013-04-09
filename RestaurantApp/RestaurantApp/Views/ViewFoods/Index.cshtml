@@ -13,58 +13,36 @@
     @Html.ActionLink("Wróć do strony głównej", "Index", "Home")
 </p>
 </hgroup>
+    
 
-
-@for (int i = 1; i <= 5; i++)
+@if (Model.Where(x => x.category == (int)RestaurantApp.Models.Categories.breakfast).Count() > 0)
 {
     <p>
-
-
-    <h3>Kategoria ToDo</h3>
+    <h3>Śniadania</h3>
     </p>
-<table border="2" width= "100%">
-    <tr  bgcolor="red">
-        <th width="10%">
-            Nazwa 
-        </th>
-        <th  width="60%">
-            Opis
-        </th>
-        <th  width="10%">
-            Cena
-        </th>
-        <th  width="10%">
-            Czas przygotowania
-        </th>
-        <th  width="10%">
-            Funkcje
-        </th>
-    </tr>
-
-@foreach (var item in Model)
-{
-    if (item.category == i)
-    {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.price) Euro
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.time_to_prepare) min
-        </td>
-        <td>
-            @Html.ActionLink("Zamówienie", "Edit", new { id = item.Id }) 
-            @Html.ActionLink("Detale", "Details", new { id = item.Id })
-        </td>
-    </tr>
-    }
+    @Html.Partial("_CategoryTable", Model.Where(x => x.category == (int)RestaurantApp.Models.Categories.breakfast));
 }
 
-</table>
+@if (Model.Where(x => x.category == (int)RestaurantApp.Models.Categories.drinks).Count() > 0)
+{
+    <p>
+    <h3>Drinki</h3>
+    </p>
+    @Html.Partial("_CategoryTable", Model.Where(x => x.category == (int)RestaurantApp.Models.Categories.drinks));
+}
+
+@if (Model.Where(x => x.category == (int)RestaurantApp.Models.Categories.mains).Count() > 0)
+{
+    <p>
+    <h3>Dania Główne</h3>
+    </p>
+    @Html.Partial("_CategoryTable",Model.Where(x => x.category == (int)RestaurantApp.Models.Categories.mains));
+}
+
+@if (Model.Where(x => x.category == (int)RestaurantApp.Models.Categories.starters).Count() > 0)
+{
+    <p>
+    <h3>Przystawki</h3>
+    </p>
+    @Html.Partial("_CategoryTable", Model.Where(x => x.category == (int)RestaurantApp.Models.Categories.starters));
 }

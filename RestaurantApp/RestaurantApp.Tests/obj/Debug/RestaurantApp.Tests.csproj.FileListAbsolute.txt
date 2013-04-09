@@ -50,9 +50,6 @@ C:\Users\raiven\Documents\Visual Studio 2010\Projects\RestaurantApp\RestaurantAp
 C:\Users\raiven\Documents\Visual Studio 2010\Projects\RestaurantApp\RestaurantApp.Tests\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\raiven\Documents\Visual Studio 2010\Projects\RestaurantApp\RestaurantApp.Tests\obj\Debug\RestaurantApp.Tests.dll
 C:\Users\raiven\Documents\Visual Studio 2010\Projects\RestaurantApp\RestaurantApp.Tests\obj\Debug\RestaurantApp.Tests.pdb
-C:\Users\Andre\Documents\GitHub\restaurant\RestaurantApp\RestaurantApp.Tests\obj\Debug\RestaurantApp.Tests.csprojResolveAssemblyReference.cache
-C:\Users\Andre\Documents\GitHub\restaurant\RestaurantApp\RestaurantApp.Tests\obj\Debug\RestaurantApp.Tests.dll
-C:\Users\Andre\Documents\GitHub\restaurant\RestaurantApp\RestaurantApp.Tests\obj\Debug\RestaurantApp.Tests.pdb
 C:\Users\Andre\Documents\GitHub\restaurant\RestaurantApp\RestaurantApp.Tests\bin\Debug\RestaurantApp.Tests.dll.config
 C:\Users\Andre\Documents\GitHub\restaurant\RestaurantApp\RestaurantApp.Tests\bin\Debug\RestaurantApp.Tests.dll
 C:\Users\Andre\Documents\GitHub\restaurant\RestaurantApp\RestaurantApp.Tests\bin\Debug\RestaurantApp.Tests.pdb
@@ -102,3 +99,6 @@ C:\Users\Andre\Documents\GitHub\restaurant\RestaurantApp\RestaurantApp.Tests\bin
 C:\Users\Andre\Documents\GitHub\restaurant\RestaurantApp\RestaurantApp.Tests\bin\Debug\DotNetOpenAuth.OAuth.xml
 C:\Users\Andre\Documents\GitHub\restaurant\RestaurantApp\RestaurantApp.Tests\bin\Debug\DotNetOpenAuth.OpenId.RelyingParty.xml
 C:\Users\Andre\Documents\GitHub\restaurant\RestaurantApp\RestaurantApp.Tests\bin\Debug\DotNetOpenAuth.OpenId.xml
+C:\Users\Andre\Documents\GitHub\restaurant\RestaurantApp\RestaurantApp.Tests\obj\Debug\RestaurantApp.Tests.csprojResolveAssemblyReference.cache
+C:\Users\Andre\Documents\GitHub\restaurant\RestaurantApp\RestaurantApp.Tests\obj\Debug\RestaurantApp.Tests.dll
+C:\Users\Andre\Documents\GitHub\restaurant\RestaurantApp\RestaurantApp.Tests\obj\Debug\RestaurantApp.Tests.pdb
