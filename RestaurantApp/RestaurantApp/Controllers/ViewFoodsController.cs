@@ -16,11 +16,38 @@ namespace RestaurantApp.Controllers
         //
         // GET: /ViewFoods/
 
-        public ActionResult Index()
+        public ActionResult Index(int reservation_id = 0)
         {
+            ViewBag.Reservation_id = reservation_id;
+
             return View(db.Foods.ToList().OrderBy(x => x.category));
         }
 
+        public ActionResult Add_order(int reservation_id, int food_id)
+        {
+            Orders new_order = new Orders();
+            Foods food = db.Foods.Find(food_id);
+            Reservations reservation = db.Reservations.Find(reservation_id);
+
+            //wypelnienie row
+            new_order.Foods_id = food_id;
+            new_order.Reservations_id = reservation_id;
+            new_order.state = 0;
+            new_order.price = food.price;
+            new_order.date_time = Convert.ToDateTime(reservation.date_time);
+
+            //dodanie nowej pozycji
+            try
+            {
+                db.Orders.Add(new_order);
+                db.SaveChanges();
+                return RedirectToAction("Index", new { reservation_id=reservation_id });
+            }
+            catch
+            {
+                return View();
+            }
+        }
 
         //
         // GET: /ViewFoods/Details/5

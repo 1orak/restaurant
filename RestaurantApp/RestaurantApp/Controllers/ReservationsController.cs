@@ -15,6 +15,7 @@ namespace RestaurantApp.Controllers
 
         public ActionResult Index()
         {
+            
             return View(db.Reservations.ToList());
         }
 
@@ -23,8 +24,21 @@ namespace RestaurantApp.Controllers
 
         public ActionResult Details(int id)
         {
-            Reservations reservations = db.Reservations.Find(id);
-            return View(reservations);
+            ViewBag.Reservation_id = id;
+            //ViewBag.Price = ?
+            //ViewBag.Date = ?
+
+            var orders = from m in db.Orders select m;
+            orders = orders.Where(x => x.Reservations_id == id);
+            if(orders.Count() != 0)
+            {
+                ViewBag.Price = orders.Sum(x => x.price);
+                //ToDo ViewBag.Time/Date
+            }
+            else ViewBag.Price = 0;
+            
+
+            return View(orders);
         }
 
         //
@@ -62,8 +76,10 @@ namespace RestaurantApp.Controllers
 
         public ActionResult Edit(int id)
         {
+            ViewBag.Id = id;
             return View();
         }
+
 
         //
         // POST: /Reservations/Edit/5
@@ -92,7 +108,18 @@ namespace RestaurantApp.Controllers
 
         public ActionResult Delete(int id)
         {
-            return View();
+            try
+            {
+                Reservations reservation = new Reservations();
+                reservation = db.Reservations.Find(id);
+                db.Reservations.Remove(reservation);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
         }
 
         //
@@ -104,7 +131,6 @@ namespace RestaurantApp.Controllers
             try
             {
                 // TODO: Add delete logic here
-
                 return RedirectToAction("Index");
             }
             catch

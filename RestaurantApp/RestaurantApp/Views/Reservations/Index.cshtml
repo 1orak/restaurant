@@ -1,24 +1,38 @@
 ﻿@model IEnumerable<RestaurantApp.Models.Reservations>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Rezerwacje";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+            </hgroup>
+            <hgroup>
+            <p>
+                @Html.ActionLink("Złóż rezerwację", "Create")
+            </p>    
+            </hgroup>
+        </div>
+    </section>
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 <table>
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.table_number)
+            Numer rezerwacji(test)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.date_time)
+            Data
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.date_time)
+            Godzina
+        </th>
+        <th>
+            Numer stolika
         </th>
         <th></th>
     </tr>
@@ -26,7 +40,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.table_number)
+            @Html.DisplayFor(modelItem => item.Id)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.date_time.Date)
@@ -35,9 +49,12 @@
             @Html.DisplayFor(modelItem => item.date_time.TimeOfDay)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.DisplayFor(modelItem => item.table_number)
+        </td>
+        <td>
+            @Html.ActionLink("Zmień", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Szczegóły", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Usuń", "Delete", new { id=item.Id })
         </td>
     </tr>
 }

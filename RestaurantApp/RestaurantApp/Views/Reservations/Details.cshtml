@@ -1,29 +1,64 @@
-﻿@model RestaurantApp.Models.Reservations
+﻿@model IEnumerable<RestaurantApp.Models.Orders>
 
 @{
-    ViewBag.Title = "Details of reservation";
+    ViewBag.Title = "Szczegóły rezerwacji";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+            </hgroup>
+            <p>Numer rezerwacji @ViewBag.Reservation_id</p>
+            <p>Koszt zamówienia @ViewBag.Price</p>
+            <p>Łączny czas oczekiwania @ViewBag.Reservation_id</p>
+            <hgroup>
+            <p>
+                @Html.ActionLink("Dodaj pozycję do rezerwacji", "Index", "ViewFoods", new { reservation_id = ViewBag.Reservation_id}, null)
+                @Html.ActionLink("Wróć do listy rezerwacji", "Index")
+            </p>    
+            </hgroup>
+        </div>
+    </section>
 }
 
-<h2>Details</h2>
+<table>
+    <tr>
+        <th>
+            id(test)
+        </th>
+        <th>
+            Pozycja z menu
+        </th>
+        <th>
+            cena
+        </th>
+        <th>
+            czas wykonania
+        </th>
+        <th></th>
+    </tr>
 
-<fieldset>
-    <legend>Reservations</legend>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Foods_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.date_time_to_end)
+        </td>
+        <td>
+            @Html.ActionLink("Zobacz szczegóły", "Details", "ViewFoods", new { id=item.Foods_id }, null) |
+            @Html.ActionLink("Usuń", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.table_number)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.table_number)
-    </div>
+</table>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.date_time)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.date_time)
-    </div>
-</fieldset>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

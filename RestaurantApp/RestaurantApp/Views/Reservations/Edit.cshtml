@@ -1,18 +1,19 @@
 ﻿@model RestaurantApp.Models.Reservations
 
 @{
-    ViewBag.Title = "Nowa rezerwacja";
+    ViewBag.Title = "Edycja rezerwacji";
 }
 @section featured {
     <section class="featured">
         <div class="content-wrapper">
             <hgroup class="title">
                 <h1>@ViewBag.Title</h1>
+                numer rezerwacji: @ViewBag.Id
             </hgroup>
             <hgroup>
-            <p>
-                @Html.ActionLink("Wróć do listy rezerwacji", "Index")
-            </p>    
+            <div>
+                @Html.ActionLink("Powrót do listy rezerwacji", "Index")
+            </div>    
             </hgroup>
         </div>
     </section>
@@ -24,8 +25,10 @@
     <fieldset>
         <legend>Reservations</legend>
 
+        @Html.HiddenFor(model => model.Id)
+
         <div class="editor-label">
-            Wybierz numer stolika
+            Numer stolika
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.table_number)
@@ -33,17 +36,20 @@
         </div>
 
         <div class="editor-label">
-            Wybierz datę i godzinę rezerwacji
+            Data
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.date_time)
             @Html.ValidationMessageFor(model => model.date_time)
         </div>
+
         <p>
-            <input type="submit" value="Stwórz rezerwację" />
+            <input type="submit" value="Zapisz zmiany" />
         </p>
     </fieldset>
 }
+
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

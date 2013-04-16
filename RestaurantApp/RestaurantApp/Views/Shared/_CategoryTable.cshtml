@@ -35,7 +35,10 @@
                 @Html.DisplayFor(modelItem => item.time_to_prepare) min
             </td>
             <td>
-                @Html.ActionLink("Zamówienie", "Edit", new { id = item.Id }) 
+                @if(ViewBag.Reservation_id != 0) 
+                {
+                    @Html.ActionLink("Zamówienie", "Add_order", new {reservation_id = ViewBag.Reservation_id, food_id=item.Id })
+                } 
                 @Html.ActionLink("Detale", "Details", new { id = item.Id })
             </td>
         </tr>

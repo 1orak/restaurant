@@ -3,18 +3,42 @@
 @{
     ViewBag.Title = "Menu ";
 }
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+            </hgroup>
+            
+            @if(ViewBag.Reservation_id == 0)
+            {
+            <hgroup>
+            <p>
+                @Html.ActionLink("Wyszukaj", "SearchIndex")
+            </p>
+            <p>
+                @Html.ActionLink("Wróć do szczegółów rezerwacji", "Index", "Home")
+            </p>
+            </hgroup>
+            }
+            else
+            {
+            <hgroup>
+            <p>
+                Dodaj pozycję do rezerwacji o numerze @ViewBag.Reservation_id
+            </p>
+            <p>
+                @Html.ActionLink("Wróć do strony głównej", "Details", "Reservations", new { id = ViewBag.Reservation_id }, null)
+            </p>
+            </hgroup>
+            }
 
-<h2>@ViewBag.Title</h2>
-<hgroup class="title">
-<p>
-    @Html.ActionLink("Wyszukaj", "SearchIndex")
-</p>
-<p>
-    @Html.ActionLink("Wróć do strony głównej", "Index", "Home")
-</p>
-</hgroup>
-    
 
+        </div>
+    </section>
+}
+
+   
 @if (Model.Where(x => x.category == (int)RestaurantApp.Models.Categories.breakfast).Count() > 0)
 {
     <p>

@@ -1,0 +1,21 @@
+﻿
+
+@{
+    ViewBag.Title = "Zamowienie";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                numer rezerwacji: @ViewBag.Id
+            </hgroup>
+            <hgroup>
+            <div>
+                @Html.ActionLink("Powrót do listy rezerwacji", "Index")
+            </div>    
+            </hgroup>
+        </div>
+    </section>
+}
+Wystąpił problem przy dodawaniu pozycji do zamówienia

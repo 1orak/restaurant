@@ -188,6 +188,7 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Foods.cs" />
+    <Compile Include="Models\MainModel.cs" />
     <Compile Include="Models\Orders.cs" />
     <Compile Include="Models\Reservations.cs" />
     <Compile Include="Models\RestaurantDBContext.cs" />
@@ -355,6 +356,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\_CategoryTable.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reservations\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ViewFoods\Add_order.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reservations\Delete.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
