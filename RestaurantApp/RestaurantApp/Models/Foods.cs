@@ -31,6 +31,6 @@ namespace RestaurantApp.Models
         starters = 3,
         beers = 4,
         breakfast = 5,
-        soop = 6
+        soup = 6
     }
 }

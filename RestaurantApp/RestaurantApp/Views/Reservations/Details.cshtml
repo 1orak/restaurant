@@ -10,8 +10,9 @@
                 <h1>@ViewBag.Title</h1>
             </hgroup>
             <p>Numer rezerwacji @ViewBag.Reservation_id</p>
+            <p>Data @ViewBag.Date i godzina rezerwacji @ViewBag.Time, numer stolika @ViewBag.Table </p>
             <p>Koszt zamówienia @ViewBag.Price</p>
-            <p>Łączny czas oczekiwania @ViewBag.Reservation_id</p>
+            <p>Łączny czas oczekiwania ToDo</p>
             <hgroup>
             <p>
                 @Html.ActionLink("Dodaj pozycję do rezerwacji", "Index", "ViewFoods", new { reservation_id = ViewBag.Reservation_id}, null)
@@ -55,7 +56,7 @@
         </td>
         <td>
             @Html.ActionLink("Zobacz szczegóły", "Details", "ViewFoods", new { id=item.Foods_id }, null) |
-            @Html.ActionLink("Usuń", "Delete", new { id=item.Id })
+            @Html.ActionLink("Usuń", "DeleteDetail", new { id = item.Id, reservation_id = ViewBag.Reservation_id })
         </td>
     </tr>
 }

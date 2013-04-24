@@ -54,6 +54,7 @@ namespace RestaurantApp.Controllers
 
         public ActionResult Details(int id)
         {
+            
             Foods foods = db.Foods.Find(id);
             return View(foods);
         }
@@ -183,8 +184,10 @@ namespace RestaurantApp.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
-
+                Foods food=db.Foods.Find(id);
+                db.Foods.Remove(food);
+                db.SaveChanges();
+               
                 return RedirectToAction("Index");
             }
             catch

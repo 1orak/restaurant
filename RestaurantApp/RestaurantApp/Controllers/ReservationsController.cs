@@ -25,6 +25,10 @@ namespace RestaurantApp.Controllers
         public ActionResult Details(int id)
         {
             ViewBag.Reservation_id = id;
+            Reservations reservation = db.Reservations.Find(id);
+            ViewBag.Date = reservation.date_time.Date.ToShortDateString();
+            ViewBag.Time = reservation.date_time.TimeOfDay;
+            ViewBag.Table = reservation.table_number;
             //ViewBag.Price = ?
             //ViewBag.Date = ?
 
@@ -110,10 +114,13 @@ namespace RestaurantApp.Controllers
         {
             try
             {
-                Reservations reservation = new Reservations();
-                reservation = db.Reservations.Find(id);
-                db.Reservations.Remove(reservation);
-                db.SaveChanges();
+                
+                    Reservations reservation1 = new Reservations();
+                    reservation1 = db.Reservations.Find(id);
+                    db.Reservations.Remove(reservation1);
+                    db.SaveChanges();
+                    //ToDo 
+                    // Jeżeli usuwam rezerwacje to należy usunąć też wszystkie rekordy z orders z nim zwiazane
                 return RedirectToAction("Index");
             }
             catch
@@ -130,7 +137,7 @@ namespace RestaurantApp.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
+                
                 return RedirectToAction("Index");
             }
             catch
@@ -138,5 +145,43 @@ namespace RestaurantApp.Controllers
                 return View();
             }
         }
+
+
+        public ActionResult DeleteDetail(int id, int reservation_id)
+        {
+            try
+            {
+
+                Orders order = new Orders();
+                order = db.Orders.Find(id);
+                db.Orders.Remove(order);
+                db.SaveChanges();
+
+                return RedirectToAction("Details", new { id = reservation_id });
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+
+        [HttpPost]
+        public ActionResult DeleteDetail(int id, int reservation_id, Reservations reservation)
+        {
+            try
+            {
+
+                return RedirectToAction("Details", new { id = reservation_id });
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+
+
+
     }
 }

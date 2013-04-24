@@ -1,30 +1,33 @@
 ﻿@model RestaurantApp.Models.Foods
 
 @{
-    ViewBag.Title = "Details of position";
+    ViewBag.Title = "Detale pozycji menu";
 }
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+            </hgroup>
+            <p>
+            @Html.ActionLink("Wróć", "Index")
+            </p>
 
-<h2>@ViewBag.Title</h2>
+        </div>
+    </section>
+}
 
 <fieldset>
     <legend>Foods</legend>
 
     <div class="display-label" style="color:#0000FF">
-         Name: @Html.DisplayFor(model => model.name)
+         Nazwa: @Html.DisplayFor(model => model.name)
     </div>
-    @if (Model.category == 4)
+    @if (Model.category == 6)
     {
     <div class="display-label">
         
-         Category: Soup
-        
-    </div>
-    }
-    @if (Model.category == 2)
-    {
-    <div class="display-label">
-        
-         Category: Main courses
+         Kategoria: Zupa
         
     </div>
     }
@@ -32,23 +35,36 @@
     {
     <div class="display-label">
         
-         Category: @Html.DisplayFor(model => model.category)
+         Kategoria: ToDo
+        
+    </div>
+    }
+    @if (Model.category == 2)
+    {
+    <div class="display-label">
+        
+         Kategoria: Danie główne
+        
+    </div>
+    }
+    else
+    {
+    <div class="display-label">
+        
+         Kategoria: ToDo
         
     </div>
     }
     <div class="display-label"  style="color:#0000FF">
-         Description: @Html.DisplayFor(model => model.description)
+         Opis: @Html.DisplayFor(model => model.description)
     </div>
 
     <div class="display-label">
-         Price: @Html.DisplayFor(model => model.price) Euro
+         Cena: @Html.DisplayFor(model => model.price) 
     </div>
 
     <div class="display-label" style="color:#0000FF">
-         Time to prepare: @Html.DisplayFor(model => model.time_to_prepare) minutes
+         Czas przygotowania: @Html.DisplayFor(model => model.time_to_prepare) minut
     </div>
 </fieldset>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+

@@ -1,27 +1,35 @@
 ﻿@model IEnumerable<RestaurantApp.Models.Foods>
 
 @{
-    ViewBag.Title = "Search menu";
+    ViewBag.Title = "Zaawansowane";
 }
-
-<h2>@ViewBag.Title</h2>
-
-<p>
-    @Html.ActionLink("Create new", "Create")
-    <p>
-    @Html.ActionLink("Back to menu", "Index")
-
-    </p>
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+            </hgroup>
+            <p>
+                @Html.ActionLink("Dodaj nową pozycję menu", "Create")
+            </p>
+            <p>Wyszukaj</p>
     @using (Html.BeginForm())
     {   
          <p>
-         name: @Html.TextBox("SearchString") 
-         category: @Html.DropDownList("foodCategory", "All")  
-            price: @Html.DropDownList("foodPrice", "All")
-            time: @Html.DropDownList("foodTime", "All")
-         <input type="submit" value="Filter" /></p>
+            nazwa: @Html.TextBox("SearchString") 
+            kategoria: @Html.DropDownList("foodCategory", "All")  
+            cena: @Html.DropDownList("foodPrice", "All")
+            czas: @Html.DropDownList("foodTime", "All")
+         <input type="submit" value="filtruj" /></p>
     }
-</p>
+
+
+
+        </div>
+    </section>
+}
+
+
 
 
 <table frame=box>

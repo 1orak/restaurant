@@ -14,10 +14,7 @@
             {
             <hgroup>
             <p>
-                @Html.ActionLink("Wyszukaj", "SearchIndex")
-            </p>
-            <p>
-                @Html.ActionLink("Wróć do szczegółów rezerwacji", "Index", "Home")
+                @Html.ActionLink("Zaawansowane", "SearchIndex")
             </p>
             </hgroup>
             }
@@ -28,7 +25,7 @@
                 Dodaj pozycję do rezerwacji o numerze @ViewBag.Reservation_id
             </p>
             <p>
-                @Html.ActionLink("Wróć do strony głównej", "Details", "Reservations", new { id = ViewBag.Reservation_id }, null)
+                @Html.ActionLink("Wróć do szczegółów rezerwacji", "Details", "Reservations", new { id = ViewBag.Reservation_id }, null)
             </p>
             </hgroup>
             }
@@ -54,6 +51,13 @@
     </p>
     @Html.Partial("_CategoryTable", Model.Where(x => x.category == (int)RestaurantApp.Models.Categories.drinks));
 }
+@if (Model.Where(x => x.category == (int)RestaurantApp.Models.Categories.soup).Count() > 0)
+{
+    <p>
+    <h3>Zupy</h3>
+    </p>
+    @Html.Partial("_CategoryTable", Model.Where(x => x.category == (int)RestaurantApp.Models.Categories.soup));
+}
 
 @if (Model.Where(x => x.category == (int)RestaurantApp.Models.Categories.mains).Count() > 0)
 {
@@ -70,3 +74,4 @@
     </p>
     @Html.Partial("_CategoryTable", Model.Where(x => x.category == (int)RestaurantApp.Models.Categories.starters));
 }
+
