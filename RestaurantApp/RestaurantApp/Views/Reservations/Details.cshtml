@@ -1,4 +1,4 @@
-﻿@model IEnumerable<RestaurantApp.Models.Orders>
+﻿@model RestaurantApp.Models.MainModel
 
 @{
     ViewBag.Title = "Szczegóły rezerwacji";
@@ -9,10 +9,10 @@
             <hgroup class="title">
                 <h1>@ViewBag.Title</h1>
             </hgroup>
-            <p>Numer rezerwacji @ViewBag.Reservation_id</p>
-            <p>Data @ViewBag.Date i godzina rezerwacji @ViewBag.Time, numer stolika @ViewBag.Table </p>
-            <p>Koszt zamówienia @ViewBag.Price</p>
-            <p>Łączny czas oczekiwania @ViewBag.TimeToEndSum</p>
+            <p>Numer rezerwacji <b>@ViewBag.Reservation_id</b></p>
+            <p>Data <b>@ViewBag.Date</b> i godzina rezerwacji <b>@ViewBag.Time</b>, numer stolika <b>@ViewBag.Table</b> </p>
+            <p>Koszt zamówienia <b>@ViewBag.Price</b></p>
+            <p>Łączny czas oczekiwania <b>@ViewBag.TimeToEndSum</b></p>
             <hgroup>
             <p>
                 @Html.ActionLink("Dodaj pozycję do rezerwacji", "Index", "ViewFoods", new { reservation_id = ViewBag.Reservation_id}, null)
@@ -40,13 +40,14 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model.Orders) {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Id)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Foods_id)
+            @{var foodName = Model.Foods.Where(x => x.Id == item.Foods_id).Single();}
+            @Html.DisplayFor(modelItem => foodName.name)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.price)

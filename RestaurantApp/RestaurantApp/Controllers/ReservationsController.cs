@@ -26,6 +26,7 @@ namespace RestaurantApp.Controllers
         {
             ViewBag.Reservation_id = id;
             Reservations reservation = db.Reservations.Find(id);
+            var foods = db.Foods.ToList();
             ViewBag.Date = reservation.date_time.Date.ToShortDateString();
             ViewBag.Time = reservation.date_time.TimeOfDay;
             ViewBag.Table = reservation.table_number;
@@ -44,8 +45,11 @@ namespace RestaurantApp.Controllers
                 ViewBag.TimeToEndSum = 0;
             }
             
-
-            return View(orders);
+            var mainModel = new MainModel();
+            mainModel.Reservations = reservation;
+            mainModel.Orders = orders;
+            mainModel.Foods = foods;
+            return View(mainModel);
         }
 
         //
