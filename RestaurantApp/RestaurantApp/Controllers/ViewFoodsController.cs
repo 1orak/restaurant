@@ -34,7 +34,8 @@ namespace RestaurantApp.Controllers
             new_order.Reservations_id = reservation_id;
             new_order.state = 0;
             new_order.price = food.price;
-            new_order.date_time = Convert.ToDateTime(reservation.date_time);
+            new_order.date_time = reservation.date_time;
+            new_order.date_time_to_end = reservation.date_time.AddMinutes(food.time_to_prepare);
 
             //dodanie nowej pozycji
             try

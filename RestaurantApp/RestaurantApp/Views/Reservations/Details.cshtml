@@ -12,7 +12,7 @@
             <p>Numer rezerwacji @ViewBag.Reservation_id</p>
             <p>Data @ViewBag.Date i godzina rezerwacji @ViewBag.Time, numer stolika @ViewBag.Table </p>
             <p>Koszt zamówienia @ViewBag.Price</p>
-            <p>Łączny czas oczekiwania ToDo</p>
+            <p>Łączny czas oczekiwania @ViewBag.TimeToEndSum</p>
             <hgroup>
             <p>
                 @Html.ActionLink("Dodaj pozycję do rezerwacji", "Index", "ViewFoods", new { reservation_id = ViewBag.Reservation_id}, null)

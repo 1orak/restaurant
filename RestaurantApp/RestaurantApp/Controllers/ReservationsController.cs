@@ -29,17 +29,20 @@ namespace RestaurantApp.Controllers
             ViewBag.Date = reservation.date_time.Date.ToShortDateString();
             ViewBag.Time = reservation.date_time.TimeOfDay;
             ViewBag.Table = reservation.table_number;
-            //ViewBag.Price = ?
-            //ViewBag.Date = ?
 
             var orders = from m in db.Orders select m;
             orders = orders.Where(x => x.Reservations_id == id);
-            if(orders.Count() != 0)
+            if (orders.Count() != 0)
             {
                 ViewBag.Price = orders.Sum(x => x.price);
+                ViewBag.TimeToEndSum = reservation.date_time - orders.Max(x => x.date_time_to_end);
                 //ToDo ViewBag.Time/Date
             }
-            else ViewBag.Price = 0;
+            else
+            {
+                ViewBag.Price = 0;
+                ViewBag.TimeToEndSum = 0;
+            }
             
 
             return View(orders);
