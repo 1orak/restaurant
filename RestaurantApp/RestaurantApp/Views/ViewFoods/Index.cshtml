@@ -1,0 +1,50 @@
+﻿@model IEnumerable<RestaurantApp.Models.Foods>
+
+@{
+    ViewBag.Title = "Menu ";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+            </hgroup>
+            
+            @if(ViewBag.Reservation_id == 0)
+            {
+            <hgroup>
+            <p>
+                @if(User.IsInRole("admin"))
+                {
+                    @Html.ActionLink("Zaawansowane", "SearchIndex")
+                }
+            </p>
+            </hgroup>
+            }
+            else
+            {
+            <hgroup>
+            <p>
+                Dodaj pozycję do rezerwacji o numerze @ViewBag.Reservation_id
+            </p>
+            <p>
+                @Html.ActionLink("Wróć do szczegółów rezerwacji", "Details", "Reservations", new { id = ViewBag.Reservation_id }, null)
+            </p>
+            </hgroup>
+            }
+
+
+        </div>
+    </section>
+}
+
+@foreach (var m in Model.Select(x=>x.categoryId).Distinct())
+{
+    if (Model.Where(x => x.categoryId == m).Count() > 0)
+    {
+        <p>
+        <h3>@Model.Where(x => x.categoryId == m).First().Category.CategoryName</h3>
+        </p>
+        @Html.Partial("_CategoryTable", Model.Where(x => x.categoryId == m));
+    }
+}

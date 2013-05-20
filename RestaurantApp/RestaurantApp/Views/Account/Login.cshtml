@@ -1,0 +1,42 @@
+﻿@model RestaurantApp.Models.Employees
+
+@{
+    ViewBag.Title = "Zaloguj się";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+</hgroup>
+
+<section id="loginForm">
+<h2>Użyj swojego konta.</h2>
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Log in Form</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.login)
+                @Html.TextBoxFor(m => m.login)
+                @Html.ValidationMessageFor(m => m.login)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.password)
+                @Html.PasswordFor(m => m.password)
+                @Html.ValidationMessageFor(m => m.password)
+            </li>
+            <li>
+                @Html.CheckBoxFor(m => m.RememberMe)
+                @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+            </li>
+        </ol>
+        <input type="submit" value="Zaloguj" />
+    </fieldset>
+}
+</section>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

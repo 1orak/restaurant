@@ -1,0 +1,43 @@
+﻿@model RestaurantApp.Models.Foods
+
+@{
+    ViewBag.Title = "Detale pozycji menu";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+            </hgroup>
+            <p>
+            @Html.ActionLink("Wróć", "Index")
+            </p>
+
+        </div>
+    </section>
+}
+
+<fieldset>
+    <legend>Foods</legend>
+
+    <div class="display-label" style="color:#0000FF">
+         Nazwa: @Html.DisplayFor(model => model.name)
+    </div>
+    <div class="display-label">
+        
+         Kategoria: @Html.DisplayFor(model => model.Category.CategoryName)
+        
+    </div>
+    <div class="display-label"  style="color:#0000FF">
+         Opis: @Html.DisplayFor(model => model.description)
+    </div>
+
+    <div class="display-label">
+         Cena: @Html.DisplayFor(model => model.price) 
+    </div>
+
+    <div class="display-label" style="color:#0000FF">
+         Czas przygotowania: @Html.DisplayFor(model => model.time_to_prepare) minut
+    </div>
+</fieldset>
+
