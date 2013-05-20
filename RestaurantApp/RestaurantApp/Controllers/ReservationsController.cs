@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using RestaurantApp.Models;
+using RestaurantApp.Logic;
 
 namespace RestaurantApp.Controllers
 {
@@ -59,7 +60,21 @@ namespace RestaurantApp.Controllers
         {
             var categoryList = db.Tables.Select(x => x.Id).Distinct();
             ViewBag.table_number = new SelectList(categoryList);
+
+            var tableLogic = new TableLogic();
+            var tableList = tableLogic.getTablesReservation(DateTime.Now, DateTime.Now.AddHours(-2));
+
+            ViewData["tableList"] = tableList;
+
             return View();
+        }
+
+        public PartialViewResult RefreshTableViews(DateTime datetime)
+        {
+            var tableLogic = new TableLogic();
+            var tableList = tableLogic.getTablesReservation(datetime, datetime.AddHours(-2));
+
+            return PartialView("_ShowTables", tableList);
         }
 
         //

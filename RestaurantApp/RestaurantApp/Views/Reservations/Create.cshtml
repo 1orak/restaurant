@@ -47,6 +47,9 @@
         </p>
     </fieldset>
 }
+<div id="showTables">
+    @Html.Partial("_ShowTables", ViewData["tableList"])
+</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

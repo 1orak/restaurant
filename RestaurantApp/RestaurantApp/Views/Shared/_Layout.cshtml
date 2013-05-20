@@ -50,6 +50,24 @@
             $(function () {
                 $("#date_time").datetimepicker();
             });
+
+            $(function () {
+                // Document.ready -> link up remove event handler
+                $("#date_time").change(function () {
+                    // Get the id from the link
+                    //console.log($("#date_time").val());
+                    var dateTime = $("#date_time").val();
+                    if (dateTime != '') {
+                        // Perform the ajax post
+                        $.post("/Reservations/RefreshTableViews", { "datetime": dateTime },
+                            function (data) {
+                                //console.log(data);
+                                $("#showTables").html(data);
+                                $("#dateTimeShowTables").html(dateTime);
+                            });
+                    }
+                });
+            });
         </script>
     </body>
 </html>

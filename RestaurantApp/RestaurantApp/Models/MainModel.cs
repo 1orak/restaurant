@@ -10,5 +10,6 @@ namespace RestaurantApp.Models
         public Reservations Reservations { get; set; }
         public IEnumerable<Orders> Orders { get; set; }
         public IEnumerable<Foods> Foods { get; set; }
+        public IEnumerable<Tables> Tables { get; set; }
     }
 }
